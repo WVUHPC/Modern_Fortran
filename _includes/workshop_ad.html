@@ -13,13 +13,27 @@
 
 <div class="jumbotron">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+
+    <div class="col-md-6">
+      <p>
+      <a href="{{ site.wvu_site }}" class="pull-left">
+              <img src="{{ page.root }}/assets/img/wvu-rc.png"
+              alt="WVU Research Computing logo" style="width:420px;height:116px;" />
+      </a>
+      </p>
+      <p>
+      <a href="{{ site.wvu_site }}" class="pull-left">
+              <img src="{{ page.root }}/assets/img/wvu-logo.png"
+              alt="West Virginia University" style="width:420px;height:86px;" />
+      </a>
+      </p>
+    </div>
+
+    <div class="col-md-6">
       {% unless site.title == "Workshop Title" or site.title == "" %}
-      <h2>{{site.title}}</h1>
+      <h1>{{site.title}}</h1>
       {% endunless %}
       <h2>{{page.venue}}</h2>
-      <div class="row">
-        <div class="col-md-6">
           {% if online == "true_public" %}
           <p>Online (<a href="{{page.address}}">link</a>)</p>
           {% elsif online == "true_private" %}
@@ -27,8 +41,6 @@
           {% endif %}
           <p>{{page.humandate}}</p>
           <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
-        </div>
-        <div class="col-md-6">
           <p>
           <strong>Instructors:</strong>
           {% if page.instructor %}
@@ -43,8 +55,6 @@
           {{page.helper | join: ', ' %}}
           </p>
           {% endif %}
-        </div>
-      </div>
     </div>
   </div>
 </div>
