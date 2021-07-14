@@ -14,6 +14,7 @@
 #  https://github.com/carpentries/workshop-template
 # and for instructor training events you should use:
 #  https://github.com/carpentries/training-template
+
 carpentry: "wvu"
 
 # This option is currently only needed for
@@ -43,8 +44,8 @@ flavor: "FIXME"
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Modern Fortran"
 
+title: "Modern Fortran"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
@@ -61,7 +62,7 @@ repository: <USERNAME>/<PROJECT>
 # Email address, no mailto:
 # (Don't change this -- the contact address for your workshop will be set
 # in the index.md file)
-email: "team@carpentries.org"
+email: "gufranco@mail.wvu.edu"
 
 # Sites.
 amy_site: "https://amy.carpentries.org"
