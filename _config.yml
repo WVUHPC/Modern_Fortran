@@ -43,8 +43,8 @@ flavor: "FIXME"
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Lessons on Parallel Computing"
 
+title: "Lessons on Parallel Computing"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
