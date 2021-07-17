@@ -1,3 +1,4 @@
+{% comment %}
 {% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
 {% unless curricula contains site.curriculum %}
 {% include warning-curriculum.html %}
@@ -18,7 +19,7 @@
 {% include warning-flavor.html %}
 {% endif %}
 
-{% comment %}
+
 The following setup instructions are commented out because Carpentries workshops
 cover the these topics less frequently. Please uncomment the lines that
 correspond to the topics covered in your workshop.
@@ -26,3 +27,100 @@ correspond to the topics covered in your workshop.
 {% include install_instructions/sql.html %}
 {% include install_instructions/openrefine.html %}
 {% endcomment %}
+
+<h2 id="accessing-the-clusters-using-secure-shell-ssh">Accessing the clusters using Secure shell (SSH)</h2>
+
+<p>The most common way of accessing a High-Performance Computing (HPC) cluster is via a remote shell.
+A remote shell allows you to execute commands on another machine same as you do sitting in front of it. A remote shell is convenient because it also allows other people to do the same, so you get access to a resource being utilized by several users at the same time.</p>
+
+<p>All that you need on your computer is a terminal emulator and an SSH client.
+A terminal emulator is a program that mimics the behavior of old dumb terminals from a few decades ago. An SSH client is a program on your computer that allows you to connect to the SSH server from another computer. In the old times (the 80s), people used to create a remote shell using Telnet. SSH provides a secure channel over an unsecured network such as the internet. SSH offers similar capabilities to Telnet but adding encryption, so all data sent and received between your computer and the remote host is encrypted in such a way that only your computer and the remote computer can see the data. If you want to know more about Secure Shell see it at <a href="https://en.wikipedia.org/wiki/Secure_Shell">Wikipedia</a>. Currently (2021) WVU has two clusters for HPC, Spruce Knob and Thorny Flat. You can access them using SSH.</p>
+
+<p>Regardless of which Operating System you use, there is always a way of having the terminal emulator and SSH client that you need to connect to an HPC cluster.
+Both Linux and macOS include an SSH client by default. In this case, all that you have to do is open a terminal. On macOS the terminal is located in the <em>Utilities</em> folder inside your <em>Applications</em> folder. On Linux, the terminal is so central that most Linux distributions create an icon directly from the desktop.</p>
+
+<div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a data-os="windows" href="#shell-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+    <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+    <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <article role="tabpanel" class="tab-pane active" id="shell-windows">
+      <ol>
+
+        <p>On Windows machines, you need to install an external application. One option in Windows is a free application called <a href="https://www.putty.org">PuTTY</a>. PuTTY offers a simple SSH client that is enough for this lesson. Another option is <a href="https://mobaxterm.mobatek.net">MobaXTerm</a> that offers a full-featured SSH client plus the ability to open X11 windows from the remote machine.</p>
+
+        <p><a href="./fig/PuTTY.png">
+           <img src="./fig/PuTTY.png" alt="PuTTY" />
+         </a></p>
+
+        <p><a href="./fig/MobaXterm.png">
+           <img src="./fig/MobaXterm.png" alt="MobaXterm" />
+         </a></p>
+
+        <p>More recently there are also options to get access to a terminal and SSH clients using Microsoft products. One option is to install <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+        Instructions to add an SSH client to VSC can be found <a href="https://code.visualstudio.com/docs/remote/ssh">here</a> and <a href="https://code.visualstudio.com/learn/develop-cloud/ssh-lab-machines">here</a>. Visual Studio Code will give you not only access to remote access to a file manager.</p>
+
+        <p>Another alternative is using the Windows Subsystem for Linux (WSL). WSL will allow you to run a full Linux OS inside Windows with all the commands that you will encounter on a typical Linux machine. With the latest version of WSL 2 and the development version of Windows 10, you can even run GUI applications from inside Windows alongside other Windows applications. You can see the files from your windows machine. Running and complete Linux OS inside Windows will give you access not only to SSH client and terminal but also the commands that you will learn during this lesson as you will do from a Native Linux machine. Instructions about installing and configuring WSL can be found <a href="https://docs.microsoft.com/en-us/windows/wsl/">here</a></p>
+
+      </ol>
+    </article>
+    <article role="tabpanel" class="tab-pane" id="shell-macos">
+      <p>
+        On MacOS the terminal is located in your "Applications" under "Utilities".
+      </p>
+      <p>
+        An SSH client is also integraded by default with the OS.
+      </p>
+
+      <p><a href="./fig/TerminalMacOS.png">
+         <img src="./fig/TerminalMacOS.png" alt="Terminal MacOS" />
+       </a></p>
+
+    </article>
+    <article role="tabpanel" class="tab-pane" id="shell-linux">
+      <p>
+        On any Linux distribution a Terminal is a central part of the Operating System even for desktop usage.
+        An SSH is also part of a default installation.
+        There is usually no need to install anything.
+      </p>
+      <p><a href="./fig/TerminalLinux.png">
+         <img src="./fig/TerminalLinux.png" alt="Terminal Linux" />
+       </a></p>
+    </article>
+  </div>
+</div>
+
+
+<h3 id="connecting-to-spruce-knob">Connecting to Spruce Knob</h3>
+
+<p>Most likely you will connect to Thorny Flat, our newest cluster. However, it is also good to know how to connect to Spruce, our older cluster. Accounts on those clusters are independent of each other, so you can have access to one without necessarily having an account on the other.</p>
+
+<p>To access Spruce from your computer, execute this command from your terminal (Linux, macOS):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;username&gt;@spruce.hpc.wvu.edu
+</code></pre></div></div>
+
+<p>If you are using a GUI client such as PuTTY enter <code class="language-plaintext highlighter-rouge">spruce.hpc.wvu.edu</code> as the name of the server and your username in the corresponding field before connecting to the remote machine.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh training999@spruce.hpc.wvu.edu
+</code></pre></div></div>
+
+<p>After entering your credentials with DUO, you get a prompt on Spruce</p>
+
+<h3 id="connecting-to-thorny-flat">Connecting to Thorny Flat</h3>
+
+<p>On Thorny Flat, you cannot connect to the front end directly.
+First, use your SSH client to connect to <code class="language-plaintext highlighter-rouge">ssh.wvu.edu</code> like this::</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;username&gt;@ssh.wvu.edu
+</code></pre></div></div>
+
+<p>Enter your DUO authentication and execute this command on the Gateway node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;username&gt;@thorny.hpc.wvu.edu
+</code></pre></div></div>
+
+<p>Once you enter the system, you can start typing commands. You can open several connections simultaneously. Each connection is independent of the other and you have to authenticate on each new terminal.</p>

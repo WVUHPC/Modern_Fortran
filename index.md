@@ -37,7 +37,7 @@ And run 'make workshop-check' *before* committing to make sure that changes are 
 For a workshop please delete the following block until the next dashed-line
 {% endcomment %}
 
-
+{% comment %}
 <div class="alert alert-danger">
 This is the workshop template. Delete these lines and use it to
 <a href="https://carpentries.github.io/workshop-template/customization/index.html">customize</a>
@@ -47,6 +47,7 @@ in a workshop request yet, please also fill in
 to let us know about your workshop and our administrator may contact you if we
 need any extra information.
 </div>
+{% endcomment %}
 
 {% comment %}
 8< ============================= until here ==================
