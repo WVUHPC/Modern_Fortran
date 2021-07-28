@@ -196,7 +196,10 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
-  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  Mac, Linux, or Windows operating system.
+  Any electronic device where you can install and SSH client will work.
+  See <a href="#setup">below</a> instructions about how to install an SSH client on your computer.
+  All the examples and exercises will take place on our HPC clusters.
 </p>
 
 {% comment %}
@@ -265,6 +268,7 @@ Display the contact email address set in the configuration file.
 {% comment%}
 CODE OF CONDUCT
 {% endcomment %}
+{% comment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
 <p>
@@ -277,6 +281,7 @@ Everyone who participates in Carpentries activities is required to conform to th
   </a>
 </p>
 <hr/>
+{% endcomment %}
 
 
 {% comment %}
@@ -305,10 +310,13 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 {% comment %}
 SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
+
+{% comment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 <p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
+{% endcomment %}
 
 <hr/>
 
